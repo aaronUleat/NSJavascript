@@ -1,0 +1,12 @@
+COMPILER SPEAK
+
+Necesitamos un poco mas de terminologia de el compiler para proceder con mas conocimiento.
+Cuando el engine ejecuta el codigo que el compiler produce para el segundo paso, tiene que buscar
+la variable 'a' y ver si ha sido declarada, y esta busqueda es consultar al Scope. Pero el tipo de
+busqueda que el Engine ejecuta afecta el resutaldo de la busqueda.
+En nuestro caso, se dice que el engine va a estar ejecutando una busqueda LHS de la variable 'a'.
+El otro tipo de busqueda es llamada RHS.
+Puedo apostar lo que puede signifircar la "L" y la "R". Estas significan lefthand side y right hand side.
+Side de que? De una operacion asignada.
+En otras palabras, una busqueda LHS es hecha cuando una variable aparece en el leftHandSide de una asignacion
+y RHS busca cuando una variable aparece en la parte derecha de una asignacion.

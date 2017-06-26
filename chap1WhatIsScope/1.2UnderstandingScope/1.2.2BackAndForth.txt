@@ -1,0 +1,33 @@
+BACK AND FORTH
+
+Cuando usted ve el programa
+var a = 2;
+usted debe pensar esto como un solo statement, pero no es asi como el Engine lo ve. De hecho el engine
+ve dos statements diferentes, uno que el compiler va a manejer durante la compilacion, y otro que engine
+va a manejar durante la ejecucion.
+Entonces vamos a ver como el Engine y sus amigos abordan el programa
+var a = 2;
+La primera cosa que el compiler va a realizar con este programa es crear un lexing para desglosar en tokens
+que van hacer parseados en un arbol. Pero cuando el compiler llegue a la generacion del codigo, va a tratar
+de alguna manera diferente de la que quizas asumamos.
+Una razonable suposicion, seria que el compilador va a producir codigo que sea sumado por este pseudocodigo
+"Asigne memoria para esta variable, dele el nombre de a, despues pegue el valor 2 dentro de esa variable".
+Pero eso no es lo que pasa exactamente.
+
+El compilador va a procesar de la siguiente manera:
+    1. Encontrando el var a, el compiler le pregunta al scope  si una variable 'a' ya existe, para esa coleccion
+    que esta dentro del scope. Si ya existe el compiler va a ignorar esta declaracion y continua moviendose.
+    De otra manera, el Compiler le pregunta al Scope que declare una nueva variable llamada 'a' para la coleccion
+    de ese scope.
+
+    2. El Compiler despues produce codigo para el Engine para que se ejecute mas tarde, para manejar la
+    asignacion 'a = 2'. El Engine del codigo corre y primero pregunta al Scope si hay una variable llamada
+    'a' accesible en la coleccion del Scope al corriente. Si es asi, el Engine usa esa variable. Si no, El
+    Engine busca en otro lugar (vea "Nested scope en la pagina 8").
+
+Si el engine eventualmente encuentra una variable, le asigna el valor 2 a ella. Si no el Engine va a levantar
+su mano y va a gritar error.
+
+Para resumir: dos acciones distintas son tomadas de una asignacion de de variable: Primero, el compiler
+declara una variable (si no ha sido declarada previamente) en el Scope al corriente, y segundo cuando
+se esta ejecutando. El engine busca la variable y la asigna si es encontrada.
