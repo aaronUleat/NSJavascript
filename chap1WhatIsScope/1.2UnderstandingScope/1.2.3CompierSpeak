@@ -10,3 +10,55 @@ Puedo apostar lo que puede signifircar la "L" y la "R". Estas significan lefthan
 Side de que? De una operacion asignada.
 En otras palabras, una busqueda LHS es hecha cuando una variable aparece en el leftHandSide de una asignacion
 y RHS busca cuando una variable aparece en la parte derecha de una asignacion.
+
+De hecho, mova a ser un poco mas precisos. Un RHS busca en indistingible, para nuestro proposito, de una simple
+busqueda de los valores de alguna variables, mientras el buscador LHS esta tratando de buscar la varabile
+en el mismo contenedor, para ver si la puede asignar. De esta manrea, el RHS no solamente significa "RIghhand
+side of asignment" por decir, mas adecuadaente significa, "no lefthand side";
+
+Siendo un poco facil por el momento, usted podria pensar que el RHS significa "Obtenga su valor", Implicando
+que RHS significa "vaya y tome el valor de ...".
+
+Vamos a verlo de una manera mas profunda.
+
+Cuando yo digo.
+console.log(a);
+La referencia de 'a' es un RHS, porque nada a sido asignado al valor  'a' aqui. En lugar de eso, estamos tratando
+de obtener le valor de 'a', para que el valor pueda ser pasado en en console.log(...);
+En contraste.
+a = 2;
+La referencia de 'a' en este caso es un LHS, por que no nos importa en este momento no nos importa cual es el
+valor al corriente de 'a', simplemente queremo encontrar la variable como un target para la asignacion = 2;
+
+LHS y RHS significan "Lenft/Righthand side of an asignment" no significan literalmente "left/right side of
+the = como un asignador del operador". Hay muchas otras maneras que las asignaciones puedan suceder, y es
+mejor que conceptualmente piense en ellos como: "De quien es el blanco de la asignacion "LHS"? y "Quien
+es la fuente de la asignacion (RHS)"?
+
+Considere el siguiente programa, el cual tiene dos LHS y RHS referencias.
+
+function foo(a) {
+    console.log(a);
+}
+
+foo(2);
+
+La ultima linea que invoca a foo(...) como una llamada de una funcion require on referencia RHS para foo,
+significando. "Vaya y busque el valor de foo y demelo". Ademas (..) significa que el valor de foo debe ser
+ejecutado, asi que mejor sea una funcion.
+
+Hay una asignacion sutil pero importante aqui.
+
+Usted talvez omition el implicado 'a = 2' en este snippet. Lo que pasa es que cuando el valor 2 es pasado
+como un argumento de foo(...), en el cual es caso es el valor 2 que se asigna al parametro a. Para
+(iplicitamente) asigna un paramentro a 'a', una busqueda LHS es ejecutada.
+Tambien hay una referencia RHS para el valor de 'a', y ese resultado es pasado al console.log(...)
+console.log(...) necesita una referencia para ejecutarse. Es una Busqueda RSH para objeto console,
+despues una resolucion a la propiedad ocurre para ver si un metodo log es llamado.
+
+Finalmente, podemos conceptualizar que un intercambio LHS/RHS de pasar el valor 2 (por una variable
+'a's RHS busqueda) dentro de log(...). Dentro de la implementacion nativa de log(..), podemos asumir
+que tiene parametros, el primer de el cual (talvez llamado arg1), tiene una referencia LHS, antes de la
+asignacion del 2 a ella;
+
+
