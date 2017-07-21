@@ -29,3 +29,10 @@ scope global, y lo devuelve al Engine.
   comportamiento es que rechaza el automatic/implicit creacion de variables globales. En ese caso, no habra scope
   global para varibles para enviar desde la busqueda LHS y el motor va a tirar una referencia "ReferenceError" similar
   al RHS case.
+
+Ahora la variable es encontrada en RHS, pero usted trata de hacer con, pero usted trata de hacer algo con el valor
+que no es posible, como tratar de ejecutar como una funcion a un valor que no es una funcion, o referenciar una
+propiedad  que es null o undefined, despues el Engine enviar un error diferente, llamado TypeError.
+ReferenceError esta relacionado a una falla de resolucion en el scope, mientras TypeError implica que la resolucion
+del scope fue existosa, pero que hubo una accion imposible/ilegal intentada en contra del resultado.
+
