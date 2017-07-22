@@ -1,0 +1,24 @@
+EVAL
+
+La funcion eval() en Javascript toma un string como un argumento y
+lo trata el contenido del string como si fuera en realidad codigo  escrito
+en ese punto en le programa. En otras palabras, usted puede programaticamente
+generar codigo dentro de su codigo escrito. y corre el codigo generado
+como si fuera creado en el tiempo donde el codigo fue escrito.
+
+Evualando eval(..) (un juego de palabras) en esa luz, deberia estar claro como
+eval(..) permite modificar el ambiente lexical scope al hacer trampa y
+pretende al tiempo del codigo escrito (lexical) codigo estuviera ahi todo el
+tiempo.
+En las siguientes lineas de codigo despues de un eval(..) haya sido ejecutado, el motor
+no sabra o le importara que el codigo previo en cuestionamiento fue interpretado dinamicamente
+y ese ambiente lexical scope haya sido modificado. El motor simplemente ejecutara su scope
+lexico y buscara como siempre lo hace.
+considere el siguiente codigo
+
+function foo(str, a) {
+	eval( str );// cheating
+	console.log(a, b);
+}
+var b = 2;
+foo("var b = 3;", 1);
