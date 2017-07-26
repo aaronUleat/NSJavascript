@@ -1,0 +1,22 @@
+PERFORMANCE
+
+Los dos eval(..) y 'whit' hacen trampa al author-time defini por el lexical scope al modificar y crear un nuevo
+lexical scope al momento de ejecucion.
+Entonces, cual es el gran problema, usted pregunta? si ofrecen funcionalidad mas sofisticada y flexibilidad en el
+codigo, no son buenas caracteristicas? NO...
+
+El motor de Javascript tiene un numero de optimizaciones de performance que se ejecutan durante la fase de
+compilacion. Algunos de estos reducen a ser capaz de escencialmente analizar el codigo como los lexes, y
+predeterminar donde todas las variables y declaracion de funciones, estan, entonces le toma menos esfuerzo
+resolver identificadores durante la ejecucion.
+Pero si el motor encuentra un eval(..) o un 'with' en el codigo, escencialmente tiene que asumir que toda su
+consiencia de localizar indentificadores talvez sea invalido, por que no puede saber al momento del lexing
+exactamente que codigo usted pase en el eval(..) para modificar el scope lexico, o los contenidos del objeto
+que usted le pase a 'with' lo que va a crear un nuevo scope lexico que tiene que ser consultado.
+En otras palabras, en el modo pesimista, la mayoria de esas optimizaciones que harian inutil si eval(..)
+or 'with' estan presentes, osea simplemente no ejecuta la optimizacion.
+Su codigo es casi seguro tiende a correr mas lento simplemente por el hecho de que usted incluye un eva(..) o
+el 'with' en cualquier lado de su codigo. No importa que tan inteligente el motor al tratar de limitar
+los efectos secundarios de esta pesismista suposicion, no hay alguna forma para realizar una optimizacion,
+el codigo corre lento.
+

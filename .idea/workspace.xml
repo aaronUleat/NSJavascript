@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="831d5e6b-0c2b-4ca1-ba7f-ac7b256fac05" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/2.2.1eval.txt" afterPath="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/2.2.1eval.txt" />
+=======
+<<<<<<< HEAD
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chap1WhatIsScope/1.5Review/intro.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chap1WhatIsScope/1.4Errors/intro.txt" afterPath="$PROJECT_DIR$/chap1WhatIsScope/1.4Errors/intro.txt" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/intro.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/lextime.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/lextime.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/look-ups.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chap2LexicalScope/intro.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +33,43 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="with.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/with.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="464">
               <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="dgs_stats.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/dgs_stats.csv">
+          <provider selected="true" editor-type-id="csv-data-editor">
+            <state>
+              <format>
+                <csv-format name="Tab-separated (TSV)">
+                  <data>
+                    <record-format prefix="" suffix="" nullText="" quotationPolicy="as needed" valueSeparator="," recordSeparator="&#10;">
+                      <quotation>
+                        <quotes left="&quot;" right="&quot;" leftEscaped="&quot;&quot;" rightEscaped="&quot;&quot;" />
+                        <quotes left="'" right="'" leftEscaped="''" rightEscaped="''" />
+                      </quotation>
+                    </record-format>
+                  </data>
+                </csv-format>
+              </format>
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="85" lean-forward="false" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
+=======
+      <file leaf-file-name="2.2.1eval.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/2.2.1eval.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
               <folding />
             </state>
           </provider>
@@ -50,6 +97,9 @@
         <option value="$PROJECT_DIR$/chap1WhatIsScope/1.2UnderstandingScope/EngineScopeConversation.txt" />
         <option value="$PROJECT_DIR$/chap1WhatIsScope/1.3NestedScope/intro.txt" />
         <option value="$PROJECT_DIR$/chap1WhatIsScope/1.4Errors/intro.txt" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/chap1WhatIsScope/1.5Review/intro.txt" />
+=======
         <option value="$PROJECT_DIR$/chap2LexicalScope/intro.txt" />
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/lextime.html" />
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/intro.txt" />
@@ -61,9 +111,13 @@
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/eval_strict.html" />
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/evanl_strict.js" />
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/2.2.1eval.txt" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/2.2.2.with.txt" />
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/with.html" />
         <option value="$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/with.js" />
+=======
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
       </list>
     </option>
   </component>
@@ -79,8 +133,13 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="27" />
+<<<<<<< HEAD
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
+=======
     <option name="width" value="1366" />
     <option name="height" value="741" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -97,8 +156,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="Scope" />
+=======
+<<<<<<< HEAD
+      <pane id="Scope" />
+=======
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -129,6 +195,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="1.5Review" />
+=======
               <option name="myItemId" value="2.2CheatingLexical" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -140,16 +209,25 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="you_dont_know_js_scope_clousures" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+      <pane id="Scratches" />
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/dgs_stats.csv" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -232,30 +310,61 @@
       <updated>1498434756233</updated>
       <workItem from="1498434758125" duration="9699000" />
       <workItem from="1498518820963" duration="2805000" />
+<<<<<<< HEAD
+      <workItem from="1498577946997" duration="5967000" />
+      <workItem from="1498692101444" duration="3193000" />
+      <workItem from="1498857241760" duration="3351000" />
+=======
       <workItem from="1498577946997" duration="5928000" />
       <workItem from="1499041170459" duration="831000" />
       <workItem from="1499646070460" duration="3037000" />
       <workItem from="1500154605362" duration="9071000" />
       <workItem from="1500258266306" duration="3003000" />
+<<<<<<< HEAD
       <workItem from="1500787677368" duration="3329000" />
       <workItem from="1501110407677" duration="79000" />
+=======
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="37782000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="25015000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1920" height="1053" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1832265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <option name="totallyTimeSpent" value="34374000" />
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="7" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12664714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17862372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34021738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33226323" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -279,6 +388,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/with.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -294,13 +404,33 @@
         </state>
       </provider>
     </entry>
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/chap1WhatIsScope/1.4Errors/intro.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="32" column="69" lean-forward="false" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+=======
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
     <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/look-ups.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="24" column="113" lean-forward="false" selection-start-line="24" selection-start-column="113" selection-end-line="24" selection-end-column="113" />
+<<<<<<< HEAD
+=======
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+          <folding />
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/chap1WhatIsScope/1.4Errors/intro.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+=======
     <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.1lex-time/intro.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -319,6 +449,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
           <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
         </state>
       </provider>
     </entry>
@@ -399,6 +530,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chap1WhatIsScope/1.4Errors/intro.txt">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="579">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+=======
         <state relative-caret-position="590">
           <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
         </state>
@@ -436,10 +571,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
           <caret line="32" column="73" lean-forward="false" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2cheatingLexical" />
+=======
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2cheatingLexical">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/chap1WhatIsScope/1.5Review/intro.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+=======
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
     <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/eval.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -451,9 +608,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+          <folding />
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$USER_HOME$/Downloads/dgs_stats.csv">
+      <provider selected="true" editor-type-id="csv-data-editor">
+        <state>
+          <format>
+            <csv-format name="Tab-separated (TSV)">
+              <data>
+                <record-format prefix="" suffix="" nullText="" quotationPolicy="as needed" valueSeparator="," recordSeparator="&#10;">
+                  <quotation>
+                    <quotes left="&quot;" right="&quot;" leftEscaped="&quot;&quot;" rightEscaped="&quot;&quot;" />
+                    <quotes left="'" right="'" leftEscaped="''" rightEscaped="''" />
+                  </quotation>
+                </record-format>
+              </data>
+            </csv-format>
+          </format>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="85" lean-forward="false" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
+=======
     <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/eval.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -477,6 +661,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chap2LexicalScope/2.2CheatingLexical/2.2.1eval.txt">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="439">
           <caret line="64" column="82" lean-forward="false" selection-start-line="64" selection-start-column="82" selection-end-line="64" selection-end-column="82" />
         </state>
@@ -500,6 +685,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+=======
+        <state relative-caret-position="564">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+>>>>>>> 64dcd4fbce3783e7a68a2f3e6a7f2f9b1503723c
+>>>>>>> 3548c1db280979c5cf3ff39ab250f8d0ce9e951b
           <folding />
         </state>
       </provider>
