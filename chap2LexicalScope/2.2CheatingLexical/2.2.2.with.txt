@@ -1,0 +1,10 @@
+WITH
+
+La otra que es mal vista, (y ahora obsoleta) caracteristica de Javascript que hace trampa al scope lexico
+es el keyword 'with'. Hay multiples de formas validas que 'with' puede ser explicado, but voy a escoger
+de aqui como explicar la perspectiva de como interactua 'with' y afecta el lexical scope.
+'With' es tipicamente explicado como un atajo para hacer multiples propiedades de referencia contra un objeto
+sin repetir la referencia del objeto mismo cada vez./
+
+
+
