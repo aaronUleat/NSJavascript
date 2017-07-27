@@ -1,0 +1,88 @@
+HIDING IN PLAIN SCOPE
+
+La forma tradicional de pensar acerca funciones a como usted las declara una funciones y despues
+agregar codigo dentro de la funcion. Pero el pensamiento inverso es igualmente poderoso y util: toma
+cualquier pieza de codigo arbitriarimente y envuelvalo dentro de una funcion, que en efecto esconde el
+codigo.
+El resultado practico es crear un scope, una burbuja alrededor del codigo, lo que significa que cualquier
+declaracion (variable o funcion) en ese codigo ahora va estar atado al scope de la nueva funcion que lo
+envuelve. antes de que el scope previo. En otras palabras, usted puede esconder variables y funciones
+al encerrarlas en el scope de una funcion.
+Por que esconder funciones y variables es una buena tecnica?
+Hay una variedad de razones por las cuales esconder variables y funciones. Ellas tienden a surgir un principio
+diseno del software, el Principio del menos priviligiado, este principio declara, que en el principio del
+software, tales como las API's para un modulo/objeto, usted debe exponer solo lo que es necesario, y esconder
+todo lo demas.
+Estos principios extienden la eleccion de cual scope contiene variables y funciones. Si todas las variables
+y funciones estuvieran en el scope global, van a estar disponibles en todos los demas scopes. Pero este violaria
+el principio "Least", exponiendo muchas variables y funciones que usted de alguna manera deberia mantener
+privado, como un uso apropiado del codigo, desalentaria el acceso a esas variables y funciones.
+
+function doSomething(a) {
+	b = a + doSomethingElse(a * 2);
+	console.log(b * 3);
+}
+function doSomethingElse(a) {
+	return a - 1;
+}
+var b;
+doSomething( 2 ); // 15
+
+En este snippet, la variable b y la funcion doSomethingElse(..) son 'privadas', detalles de como
+doSomething(..) hace el trabajo. Dando el enclosing scope 'acceso' a 'b' y doSomethingElse(..) no
+solamente es unnicesaria pero tambien posiblemente "peligroso", en el sengido que pueden ser utilizadas
+de maneras inesperadas, intencionalmente o no, esto talvez viole pre-supuestos de condicion, de
+doSomething(..). Un diseno mas apropiado seria esconder detalles privados dentro del scope de
+doSomething() tales como:
+
+function doSomething(a) {
+	function doSomethingElse(a) {
+		return a - 1;
+	}
+	var b;
+
+	b = a + doSomethingElse(a * 2);
+	console.log(b*3);
+}
+doSomething(2);
+
+Ahora b y doSomethingElse(..) no van a estar accesibles a cualquier otra influencia externa, en vez
+de eso contralada solo por doSomething(..). La funcionalidad y el resultado final no ha sido afectado,
+pero el diseno mantiene los detalles privados, privados, lo que es usualmente considerada un mejor
+software.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

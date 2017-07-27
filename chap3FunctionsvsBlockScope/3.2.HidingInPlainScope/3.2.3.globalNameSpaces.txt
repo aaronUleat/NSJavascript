@@ -1,0 +1,18 @@
+GLOBAL NAMESPACES
+Un ejemplo particularmente fuerte de (probable) colision de variables ocurre en el scope global.
+Multiples librerias cargadas dentro del programa puede ser bastante facil que choquen entre ellas
+si ellas no son apropiadamente escondidas en variables internas.
+Tales librerias tipicamente van a crear un sola declaracion de variable, a menudo un objeto, con un
+nombre unico, el scope global. Este objeto es luego usado como un namespace por esa libreria, donde
+todas las exibiciones de funcionalidad son hechas como propiedades apagadas, este objeto
+(namespace), antes de que como top-level del scope lexico identificadores de si mismos.
+
+var MyReallyCoolibrary = {
+	awesome: "stuff",
+	doSomething: function () {
+		// ...
+	},
+	doAnotherThing: function () {
+		// ..
+	}
+};

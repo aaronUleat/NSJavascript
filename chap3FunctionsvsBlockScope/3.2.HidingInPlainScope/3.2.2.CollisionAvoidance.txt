@@ -1,0 +1,42 @@
+COLLISION AVOIDANCE
+
+Otro beneficio de esconder variables y funciones dentro del scope es evitar colisiones involuntarias entre
+dos indentificadores diferentes con el mismo nombre pero dos usos diferentes. El resultado de coliciones es
+a menudo inesperado en sobreescribir valores.
+
+Por Ejemplo:
+
+function foo() {
+	function bar(a) {
+		i = 3; // cambiando 'i' en el encapsuliamiento del scope for
+		console.log(a + i);
+	}
+	for(var i = 0; i<10; i++) {
+		bar(i*2); // ops, un loop infinito
+	}
+}
+foo();
+
+El i = 3 asignacion dentro de bar(..) sobreescribe, inexperado, el 'i' fue declarado dentro
+foo(..) en el loop for, en este caso, van a resultar en un loop infinito, por que 'i' es declarada
+en un valor de fijo de 3 y eso va mantenerse para siempre < 10;
+La asignacion dentro de bar(..) necesita ser declarada como una variable local para usar, sin importar
+que nombre de identificador es escogido. var i = 3, arreglara el problema (y va a crear el previo mencionado
+"shadowed variable" declaracion para la variable 'i') Un adicional, no alternado, opcion es escoger otro
+identificador con otro nombre enteramente diferente, tales como var j = 3. Pero el diseno del software
+talvez naturalmente llamar por el mismo nombre de identificador, entonces utilizando el scope para
+esconder sus declaraciones internas es la mejor opcion y unica opcion en ese caso
+
+
+
+
+
+
+
+
+
+
+
+
+
+

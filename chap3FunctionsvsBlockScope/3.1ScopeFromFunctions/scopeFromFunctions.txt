@@ -32,4 +32,6 @@ para usar dentro de bar(..) (asumiendo de que no hay un indentificador sombreado
 El scope de la funcion alienta la idea que todas las variables pertenecen a la funcion, y que pueden ser usadas y
 reusadas a lo largo de la funcion (y de hecho, accesible dentro de los scopes anidados). Este diseno se enfoca
 puede ser muy util, y ciertamente puede hacer uso total de la naturaliza dinamica de Javascript, las variables
-toman valores de valores de diferentes tipos
+toman valores de valores de diferentes tipos.
+Por otro lado, si usted no toma precausiones, las variales que existen a travez de todo el scope pueden llevar
+a algunas trampas.

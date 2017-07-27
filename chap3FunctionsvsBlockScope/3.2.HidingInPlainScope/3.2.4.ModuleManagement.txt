@@ -1,0 +1,14 @@
+MODULE MANAGEMENT
+Otra opcion para evitar colicion de variables es el mas moderno modulo, usando una de varias dependencias
+ de managers. Usando esta herramienta, no hay librerias que se agregan como identificador al scope global,
+ pero son en vez de eso tener requerimientos para tener sus identificadores, que sean explicitamente
+ importados dentro de otro scope especifico a travez del uso de las dependencia managers usando
+ varios mecanimos.
+ Deberia ser observable que esas herramientas no poseen "magico" funcionalidad que va a eximir
+ de las reglas del scope lexico. Ellos simplemente usan las reglas del scope como se explicaron
+ aqui para reenforzar que no identificadores son inyectados dentro de cualquier scope compartido
+ y son en vez de eso matenerlos en privado, non-collision-susceptibles scopes, los cuales previenen
+ cualquier coalision de scopes.
+ Como tal usted puede codear defensivamente y lograr el mismo resultado como la dependencia de
+ managers hacerlo sin necesitarlos, si usted hace eso. Vea el capitulo 5 para mas informacion acerca
+ del patron de modulos.
