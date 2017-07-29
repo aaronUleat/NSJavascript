@@ -22,3 +22,29 @@ una funcion event handler quiere desatar asi mismo para dispararse.
 
 3. Las funciones anonimas omiten un nombre, lo que es algunas veces de ayuda en proveer mas legible/entendiblemente
 codigo. Un nombre descriptivo ayuda a los doscumentos en cuestion.
+
+Funciones expresadas en linea son poderosas y utiles -- la pregunta hacerca anonimus vs named no se detracta
+por eso. Proveer un nombre para la funcion expresada dirige estos incovenientes, pero no tienen desventajas
+tangibles. Las mejor practica es la de siempre nombrar sus funciones expresadas.
+
+setTimeout(function timeoutHandler() { // <-- look I have a name
+    console.log("I waited 1 second");
+}, 1000).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

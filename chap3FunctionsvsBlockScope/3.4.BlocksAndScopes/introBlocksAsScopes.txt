@@ -1,0 +1,75 @@
+BLOCKS AS SCOPES
+
+Mientras que la funcion son la unidad mas comun de scope, y ciertamente la mas extendida en enfoques
+de diseno en la mayoria de JS en circulacion, otras unidades de scope son posibles, y los usos de estos
+otros unidades de scope pueden llevar a una manera mejor de mantener el codigo.
+
+Muchas lenguas diferentes a Javascript soportan block scope, y los desarrolladores de otras lenguas se
+an acostumbrado ha estado en esa mentalidad, mientras que aquellos que tienen primordialmente conocimiento
+de JS pueden encontrar este concepto ligeramente extrano.
+
+Pero inclusive si usted nunca ha escrito una sola linea de codigo block-scoped fashion, entonces usted
+probablemente esta familiarizado con este modismo en Javascript.
+
+for(var i = 0; i<10; i++) {
+    console.log(i);
+}
+
+Declaramos una variable i directamente dentro del foor loop, mas que todo por nuestra intencion es usar
+'i' solo dentro del contexto del foor loop, y escencialmente ignorar el hecho de que la variable en
+realidad es el scope de si misma para el enclosing scope (function or global).
+
+Eso es lo que block scoping es. Declarar variables tan cerca como sea posible, lo mas local que se pueda,
+de donde ellas van hacer usadas. Otro ejemplo es:
+
+var foo = true;
+
+if(foo) {
+    var bar = foo  * 2;
+    bar = something( bar );
+    console.log(bar);
+}
+
+Estamos usando la variable bar solo dentro del contexto del if, tiene un poco de mas sentido que declaremos
+dentro del block del if, sin embargo, donde declaremos las variables no es relevante cuando usamos var,
+por que ellas siempre van a pertenecer al scope que las encierra. En este snippet es un falso block-scoping,
+por razones de estilos, y confiando en la autoaplicacion no por accidente se uso bar en otro lado de ese
+scope.
+
+El block scope es una herramienta para extender el principio 'Least Privilege' de esconder informacion
+en funciones para esconder informacion en bloques en nuestro codigo.
+
+Considere el foor loop de nuevo:
+
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+Por que contaminar el scope completo de una funcion con una variable i que solamente va ser (o solo deberia
+ser, por lo menos) usada por el loop for?
+Pero mas importante, los desarrolladores talvez prefieran chequear asi mismos contra usar accidentalmente
+usar las mismas variables que fueron declaradas en un scope afuera para otro proposito, tales han sido
+dirigidas a un error desconocido por utilizarlo en un lugar distinto. Block-scoping (si fuera posible)
+para la variable 'i' va hacer a la variable 'i' avilidatada para el scope del for loop, causando un
+error si 'i' es accesada en algun otro lado de la funcion. Esto ayuda a asegurar que las variables
+no esten siendo reutilizadas en maneras confusas y dificiles de mantener.
+
+Pero la realidad triste es esa, en la superficie, Javascript no tiene facilidad para block scope.
+Esto es hasta que usted indaga un poco mas profundo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+WITH
+
+Aprendimos sobre with en el capitulo 2. Mientras es mal visto, es un ejemplo de (una forma de) block scope,
+ahi el scope que es creado desde el objeto solo existe por el tiempo de vida de esa declaracion with
+y no en el scope que lo encierra.

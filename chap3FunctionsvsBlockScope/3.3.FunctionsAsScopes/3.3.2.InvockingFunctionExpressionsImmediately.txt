@@ -1,0 +1,14 @@
+INVOCKING FUNCTION EXPRESSIONS IMMEDIATELY
+
+var a = 2;
+
+(function foo() {
+    var a = 3;
+    console.log(a) // 3
+})();
+
+console.log(a); // 2
+
+Ahora que tenemos una funcion como una expresion por virtud de envolver de esta manera (), podemos ejecutar
+esa funcion al agregar otro () al final, como (function(){..})(). El primer enclosing () hace a la funcion
+una expression, y el segodo par de () ejecuta la funcion.
