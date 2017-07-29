@@ -1,0 +1,24 @@
+ANONYMOUS VERSUS NAMED
+
+Usted problamente esta familiarizado con function expressions como parametros callbacks tales como:
+
+setTimeout(function() {
+    console.log("I waited second!");
+}, 1000)
+
+Esto es una funcion anonima llamada como una funcion exprestion, por que function()... no tiene algun
+nombre que lo identifique. Function expressions pueden ser anonimas, pero function declarations no pueden
+omitir el nombre -- que seria Ilegal en la gramatica JS.
+
+Las funciones anonimas expresadas son rapidas y faciles de escribir, y muchas librerias y herramientas tienden
+a alentar este estilo idiomatico de codigo. Sin embargo, tienen muchos incovenientes a considerar.
+
+1. Las funciones anonimas no tienen un nombre util para desplegar en rastros de stack, lo que puede hacer mas
+dificil de debuguiar.
+
+2. Sin un nombre, si la funcion necesita referirise a si misma, por recursion, etc, los argumentos obsoletos.
+referencias calle es desafortunadamente requerida. Otro ejemplo de necesitar referencias a si misma es cuando
+una funcion event handler quiere desatar asi mismo para dispararse.
+
+3. Las funciones anonimas omiten un nombre, lo que es algunas veces de ayuda en proveer mas legible/entendiblemente
+codigo. Un nombre descriptivo ayuda a los doscumentos en cuestion.
