@@ -1,0 +1,11 @@
+SCOPE CLOUSURE
+
+Arrivamos a este punto, con un entendimiento solido de como el scope funciona.
+
+Vamos a tornar nuestra atencion a un importante, pero persistentemente elusivo, casi mitologico,
+parete del lenguaje: clousure. Si usted siguio nuestra discuion de lexical scope, en consecuencia,
+la paga va ser el clousure. "Hay un hombre detras de la cortina del mago, y estamos a punto de verlo",
+no es Crockford.
+
+Si usted ha sido persistente preguntando hacerca de lexical scope, ahora va ser un buen momento de retomar
+el capitulo 2 antes de proseguir

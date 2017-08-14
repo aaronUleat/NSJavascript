@@ -1,0 +1,19 @@
+REVIEW
+
+Las funciones son mas comunes unidades de scope en Javascript, Variables y Funciones que son declaradas dentro
+de otra funcion son escencialmente "hidden" de cualquier otro enclosing scope, que es un diseno y principio que
+es bueno para el software.
+
+Pero las funciones de ninguna manera son el unico scope. Block scope se refiere a la idea que las variables
+y las funciones pueden pertenecer a un block arbitrario (  generalmente, cualquier {..} par ) de codigo, en vez
+de solo al enclosing de la funcion.
+
+Empezando con ES3, la estructura try/catch tiene block scope en el catch clause.
+
+En el ES6, el keyword let (un promo del keyword de var) es introducido para permitir la declaracion de variables
+en cualquier block de codigo arbitrario, if(..) {let a = 2;} va a declarar una variable 'a' que escencialmente
+va a secuestrar el scope de if's{..} el block se adjunta asimismo ahi.
+
+Aunque alguna gente tiende a creer esto, block scope no debe ser tomado como un remplazo de var para los function
+scope. Pero funcionalidades co-existentes, tecnicas donde respectivamente apropiadas para producir un mejor,
+mas leible y codigo matenible.

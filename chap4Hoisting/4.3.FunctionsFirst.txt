@@ -1,0 +1,70 @@
+FUNCTIONS FIRST
+
+Ambas declaracion de funciones, y declaracion de variables son hoisted, pero un
+detalle sutil (que puede mostrarse en el codigo con multiples "declaraciones duplicadas")
+es que las funciones son hoisted primero, y despues las variables.
+
+Considere el siguiente snippet:
+
+foo(); // 1
+var foo;
+function foo() {
+    console.log( 1 );
+}
+
+foo = function() {
+    console.log( 2 );
+}
+
+1 es printeado primero que 2.
+
+Este siguiente snippet muestra como el engine lo interpreta:
+
+function foo() {
+    console.log(1);
+}
+
+foo(); // 1
+
+Note que "var foo" es el duplicado ( y por eso es ignorado ), aun asi viene antes de la declaracion de la funcion
+foo(), por que la declaracion de funciones son hoisted antes de las variables declaradas.
+
+Mientras multiples/duplicados declaraciones var son efectivamente ignoradas, subsecuentemente
+la declaracion de funciones sobreescriben a las anteriores
+
+foo(); // 3
+
+function foo() {
+    console.log(1);
+}
+
+var foo = function() {
+    console.log(2);
+}
+
+function foo() {
+    console.log(3);
+}
+
+Mientras esto talvez suene como nada mas que interesante academicamente, subraya el hecho que las
+definiciones repetidas en el mismo scope son muy mala idea que van a dirigir a resultados confusos.
+
+La declaracion de las funciones que aparecen dentro de bloques normales tipicamente hoist
+en el enclosing scope, en vez de ser condicional como este codigo implica.
+
+foo(); // b
+
+var a = true;
+
+if( a ) {
+    function foo() {
+        console.log("a")
+    }
+} else {
+    function foo() {
+        console.log("b");
+    }
+}
+
+Sin embargo es importante notar que este comportamiento no es de confianza y esta sujeto a cambiar
+en futuras versiones de Javascript, asi que es mejor evitar declarar funciones en bloques.

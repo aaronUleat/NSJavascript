@@ -1,0 +1,16 @@
+REVIEW
+
+Podriamos estar tentados a ver "var a = 2", como una sola sentencia, pero el motor de Javascript
+no lo ve de esa manera. El ve "var a" y "= 2" como dos sentencias separadas, el primero es un
+en la fase de compilacion, y la segunda es en la fase de ejecucion.
+
+Esto nos lleva a que todas las declaraciones en un scope, sin importar donde esten, son procesadas primero
+antes de que el codigo sea ejecutado. Usted puede visualizar estos como declaraciones ( variables y funciones ),
+ser "movidas" al top de los respectivos scopes, lo que podemos llamar como hoisting.
+
+Las declaraciones en si mismas son hoisted, pero los asigments, inclusive los asigments de funciones
+expresadas, no son hoisted.
+
+Tenga cuidado con declaraciones duplicadas, especialemente mezcladas entre "var" declaraciones y funciones.
+El peligro espera si asi lo haces.
+

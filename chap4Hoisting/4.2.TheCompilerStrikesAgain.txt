@@ -1,0 +1,149 @@
+THE COMPILER STRIKES AGAIN.
+
+Para responder esta pregunta, debemos referirnos de nuevo al capitulo 1, y nuestra
+discusion de compiladores. Hay que recordar que el engine de Javascript compila
+primero el codigo y luego lo interpreta. Parte de esa fase compilacion es la de
+encontrar y asociar todas las declaraciones y asociarlas a su scope apropiado.
+El capitulo 2 nos mostro que ese es el corazon del lexical Scope.
+
+Asi que la mejor manera de pensar estas cosas, es que todas las declaraciones,
+ambas variables y funciones, se procesan primero, antes de que el codigo sea
+ejecutado.
+
+Dondequiera que usted vea "var a = 2"; usted probablemente piense que ese es un
+solo statement. Pero Javascript en realidad lo piensa en dos statements
+: "var a"; y "=2"; El primer statement, la declaracion, es procesada durante
+la fase de compilasion. El segundo statement, de asignacion, es del lado
+izquierdo que es el lado de ejecucion.
+
+Nuestro snippet entonces deberia ser pensado como el Compilador lo piensa.
+
+var a;
+a = 2;
+console.log( a );
+
+... Donde la primera parte es la compilacion y la segunda parte es la ejecucion.
+Similarmente, a nuestro segundo snippet es de hecho procesado como:
+
+var a;
+console.log(a);
+a = 2;
+
+Entonces, una manera de pensarlo, tipo metaforicamente, hacerca de este proceso
+es que la variable y la declaracion de las funciones son movidas de donde ellas
+aparecen en el flujo del codigo al top del codigo. Esto es lo que le da el nombre
+de Hoisting.
+
+En otras palabras, la declaracion ("egg") viene antes que la asignacion ("chicken").
+
+Solo las declaraciones en si mismas son hoisted, mientras que cualquier asignacion
+o cualquier otro tipo de logica estan del aldo izquierdo. Si el hoisting estuviera
+para rearreglar la logica de nuestro codigo, podria causar estragos.
+
+foo();
+
+function foo() {
+    console.log(a) // undefined
+    var a = 2;
+}
+
+La declaracion de la funcion foo ( que en este caso incluye el implicado valor de su funcion
+ actual ) es hoisted, tal que la llamada en la primera linea es capaz de ejecutarla.
+
+ Es tambien importante notar que el hoisting es pre-scope. Entonces mientras que nuestros snnipets
+ anteriores fueron simplicados ya que fueron incluidos en el global scope, la funcion foo(..)
+ ahora esta examinandose muestra que "var a" es hoisted al top de la funcion foo(..) (no obviamente
+ al top del programa ). Entonces el programa quizas pueda ser interpretado mas precisamente como
+ el siguiente snippet:
+
+ function foo() {
+    var a;
+    console.log(a); // undefined
+    a = 2;
+ }
+foo();
+
+La declaracion de funciones estan hoisted, como ya vimos anteriormente. Pero las funciones expresadas
+no.
+
+foo(); //not ReferenceError, but TypeError!
+var foo = function bar() {
+    // ...
+};
+
+La variable identificadora foo es hoisted y adjuntada al enclosing global,
+del programa, entonces foo() no falla con un ReferenceError. Pero foo
+no tiene ninguna valor no tiene ningun valor aun ( hubiera sido verdad si la funcion
+hubiera sido declarada en vez de expresada). Entonces foo(), esta tratando de invocar
+un valor undefined, lo que es un TypeError ilegal en operaciones.
+
+Tambien recuerde que aun si es una funcion expresada con nombre, el nombre indenficador
+no esta disponible en el enclosing scope.
+
+foo(); // TypeError;
+bar(); // ReferenceError;
+
+var foo = function bar() {
+    // ...
+}
+
+Este snippet es mas exacto a como el engine lo interpreta:
+
+var foo;
+
+foo(); //TypeError
+bar(); //ReferenceError
+
+ foo = function bar() {
+    var bar = //...self
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

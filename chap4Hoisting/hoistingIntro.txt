@@ -1,0 +1,6 @@
+Para ahora, usted deberia estar comodo con la idea de scope, y como las variables son agregadas a diferentes
+niveles de scope dependiendo en donde y como son declaradas. Ambos function scope and block scope se comportan
+con las mismas reglas con respecto a esto. cualquier variable declarada dentro un scope se adjuntada a ese scope.
+
+Pero hay un detalle sutil de como el scope adjunta trabajos con declaraciones que aparecen en varias locaciones
+dentro un scope, y ese detalle es como lo vamos a examinar ahora.

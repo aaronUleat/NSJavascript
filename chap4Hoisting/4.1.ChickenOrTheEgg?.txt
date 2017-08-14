@@ -1,0 +1,33 @@
+Hay una tentacion en penzar que todo el codigo que usted ve en Javascript es intepretado linea por linea,
+de arriba a abajo en orden, como el programa lo ejecuta. Mientras eso es de alguna manera cierta, hay una
+parte de esto que es una supocision que nos puede llevar a pensar incorrectamente acerca un programa.
+
+Considere el siguiente codigo
+
+a = 2;
+var a;
+
+console.log( a );
+
+Que esperaria usted que vaya ha pintarse en el console.log(..) ?
+
+Muchos desarrodores esperarian un undefined, ya que var 'a' es declarada despues de
+a = 2
+y seria natural asumir que la variable es redefinida, y despues asignada al default undefined. sin embargo
+el output sera 2.
+
+Considere otra pieza de codigo:
+
+console.log(a);
+var a = 2;
+
+Usted talvez este tentando a asumir que, desque que usted vio el ejemplo anterior
+que compilaba un poco de abajo hacia arriba, que el fue el comportamiento que
+tuvo anteriormente, quizas en este snippet, 2 va ser printeado en el console.log.
+Otros talvez piensen que como la variable es llamada antes de declararse
+esto va a resultar en un ReferenceError.
+
+Desafortunadamente, los dos son incorrectos, undefined seria el resultado.
+
+Entonces que es lo que esta pasando aqui?, parece que tenemos un chicken-and-the-egg
+question. Cual viene primero, la declaracion "egg"; o la asignacion "chicken"?
