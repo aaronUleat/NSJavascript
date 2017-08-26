@@ -1,0 +1,24 @@
+ENLIGHTENMENT
+
+Para aquellos que de alguna manera tienen experiencia en Javascript pero nunca ha hagarrado el concepto
+de clousures, entender clousures puede parecer una nirvana especial, algo con lo que se ha luchado
+para poder lograr entenderse.
+
+Recuerdo unos anos anteriores, tenia una firme comprension de Javascript pero no tenia idea de lo que
+eran los clousures. La insinuacion de que habia este otro lado del lenguaje, uno que prometia una
+mayor capacidad de la que ya poseia, pero me enojo y me sentia burlado. Recuerdo leyendo la fuente
+del source code de algun framework tratando de entender como funcionaba realmente. Recuerdo algo del
+"module pattern" comenzo a emerger en mi mente.
+
+Lo que no sabia tiempo atras, lo que me tomo anos entender, y lo que espero impartir a ustedes, es este
+secreto: los clousures estan alrededor de todo su javascript, usted solo tiene que reconocerlo y abrazarlo.
+Los clousures no son especiales o alguna erramienta especial para aprender patrones. No, los closures
+no son una erramienta que usted deba aprender a empunar como una espada.
+
+Los clousures pasan como resultado de escribir codigo que dependen del lexical scope. Solamente pasa.
+Usted no tiene que intencionalmente crear clousures para tomar ventaja de ellos. Los clousures
+son creados y usados por todo el codigo. lo que usted esta perdiendo es el contexto mental de reconocerlo,
+de aceptarlo, y liverar los clousures por su propia cuenta.
+
+El momento de iluminacion debe ser: oh, los clousures ya estan ocurriendo a lo largo de mi codigo, finalmente
+los puedo ver. Entender clousures, es como cuando NEO ve la matrix la primera vez.

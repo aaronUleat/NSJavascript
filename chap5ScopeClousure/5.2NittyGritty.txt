@@ -1,0 +1,62 @@
+NITTY GRITTY
+
+Ok, suficiente de hiperboles y referencias de peliculas.
+
+Aqui abajo hay una definicion sucia de lo que usted necesita saber para entender y reconocer clousures.
+Clousures es cuando una funcion es capaz de recordar y accesar su lexical scope inclusive cuando la
+funcion se esta ejecutando fuera de su lexical scope.
+
+Vamos a ver a una ilustracion de esta deficion.
+
+function foo() {
+    var a = 2;
+    function bar() {
+        console.log( a );
+    }
+    bar();
+}
+
+foo();
+
+Este codigo puede parecer familiar de lo que discutimos anteriormente acerca de scope anidado.
+La funcion bar() tiene acceso a la variable 'a' que esta en el scope fuera de bar() por que el
+lexical scope busca las reglas (en este caso, es una busqueda RHS ).
+Esto es un cloure?
+Bueno tecnicamente ... talvez. Pero lo que necesitamos saber es la definicion de arriba ... no exactamente.
+Yo pienso que la manera mas exacta de explicar que bar() esta referenciando la variable 'a' es las reglas
+del lexical scope, y esas reglas son solo es (una importante!) parte de lo que un clousure es.
+
+ De una manera academica, lo que se ha dicho de el snippet de arriba es lo que la funcion bar() tiene un clousure
+ encina del scope de foo() (y de hecho, por ensima el resto de los scopes que tiene acceso, tales como el scope
+ global en nuestro caso). Poniendolo de manera diferente, es dicho que bar() closes sobre el scope de foo().
+ Por que? Por que bar() aparece anidado dentro de foo(). Asi de simple.
+
+ Pero el closure definido en esta manera no esta directamente observable, ni vemos el closure ejecitado en ese
+ snippet. Claramente vemos el lexical scope, pero el clousure se mantiene de una manera misterioso cambiando detras
+ del codigo.
+
+ Vamos a considerar un codigo que traiga el clousure a toda luz:
+
+ function foo() {
+     var a = 2;
+     function bar() {
+         console.log( a );
+     }
+     return bar;
+ }
+ var baz = foo();
+ baz();
+
+ La funcion bar() tiene acceso al lexical scope a la funcion interna de foo(). Pero despues, tomamos bar(), la
+ funcion misma, y la pasamos como value. En este caso, retornamos el objeto mismo que bar referencia.
+
+ Despues de de que foo(), es ejecutada normalmente esperariamos que la funcion dentro del scope de foo()
+ se vaya, por que sabemos que el motor emplea un colector de basura que viene con memoria libre una vez
+ que ya no lo utilize mas. Una vez que aparezca ese contenido de foo() ya no esta mas en uso, parece ser
+ natural que se considere que se fue.
+
+ Pero la "magia" de los clousure no permite que esto pase. Este scope interno de hecho continua en uso. Ese scope
+ interno es de hecho en uso, y os otros no se van. Quien lo esta usando? la funcion bar()
+
+
+
