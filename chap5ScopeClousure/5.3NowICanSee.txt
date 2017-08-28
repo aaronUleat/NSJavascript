@@ -1,0 +1,52 @@
+NOW I CAN SEE
+
+El snippet previo es de alguna manera academico y construido artificialmente para ilustrar usando
+clousures. Pero prometi algo mas que un juguete cool. Prometi que el clousure era algo alrededor
+de todo. Vamos a ver esta verdad.
+
+function wait(message) {
+	setTimeout(function timer() {
+		console.log(message);
+	}, 5000);
+}
+wait("Hello message here!!!!");
+
+Tomamos una funcion interna ( nombrada timer ) y pasamos al setTimeout(..). Pero el timer tiene un scope clousure
+ sobre wait(), de hecho manteniendo y usando una referencia a la variable mensaje.
+
+A mil milisegundos despues de que hayamos ejecutado wait(..), y su scope interno deberia de otra manera haberse
+ido, esa funcion anonima se mantiene como un clousure sobre ese scope.
+
+En lo profundo en las entranas del motor, la utilidad built-in setTimeout(...) tiene una referencia a algun
+parametro, probablemente llamada fn or func o algo como eso. El engine va a invocar esa funcion, la cual se
+esta invocando nuestra funcion interna timer, y el lexical scope referenciado continua intacta.
+
+Clousure.
+
+O si usted esta usando la persuacion de jquery ( o cualquier framework, para este asunto ).
+
+function setupBot(name, selector) {
+	$( selector ).click(function activator() {
+		console.log( "Activating: " + name );
+	});
+}
+setupBot("Clousure Bot 1", "#bot_1");
+setupBot("Clousure Bot 2", "#bot_2");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -58,5 +58,81 @@ del lexical scope, y esas reglas son solo es (una importante!) parte de lo que u
  Pero la "magia" de los clousure no permite que esto pase. Este scope interno de hecho continua en uso. Ese scope
  interno es de hecho en uso, y os otros no se van. Quien lo esta usando? la funcion bar()
 
+Por la virtud de donde es declarada, bar(*) tiene un lexical scope clousure sobre esa funcion internta
+foo(), que mantiene ese scope vivo y esa referencia es  en cualquier momento despues.
+
+bar() tiene una referencia a ese scope, y esa referencia es llamada en el clousure.
+
+Entonces unos minisigundos despues, cuando la variable 'baz' es invocada ( invocanado a la funcion interna
+que inicialmente la llamamos como bar ) debidamente tiene acceso al author-time lexical scope, entonces puede
+accesar a la variable 'a' tal como esperavamos.
+
+La funcion es invocada fuera de su author-time lexical scope. El clousure permite a la funcion continuar
+teniendo acceso al scope lexico que fue definido en el author-time.
+
+Por su puesto, es uno de las muchas maneras en que las funciones pueden ser pasadas alrededor de valores,
+y de hecho invocados en otras locaciones, todos son ejemplos de observando/ejercitando clousure.
+
+function foo() {
+	var a = 2;
+
+	function baz() {
+		console.log(a);
+	}
+
+	bar( baz );
+}
+
+function bar(fn) {
+	fn();
+}
+
+Pasamos la funcion interna baz() sobre bar(), y llamamos a la funcion interna ( nombrada como fn ahora ), y cuando
+hagamos, su clousure sobre el scope interno de foo() es observado al accesar a la variable 'a'.
+
+Estas son pasadas alrededor de funciones puede ser indirecto, tambien.
+
+var fn;
+
+function foo() {
+	var a = 2;
+
+	function baz() {
+		console.log(a);
+	}
+	fn = baz;
+}
+
+function bar() {
+	console.log("Into bar");
+	fn();
+}
+
+foo();
+bar();
+
+Cualquier facilidad que podamos usar para transportar una funcion interna fuera de su scope lexico, va a mantener
+una referencia del scope de donde fue creada originalmente, y donde quiera que se ejecute, ese clousure
+va hacer ejercitado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
