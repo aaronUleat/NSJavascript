@@ -33,6 +33,49 @@ function setupBot(name, selector) {
 setupBot("Clousure Bot 1", "#bot_1");
 setupBot("Clousure Bot 2", "#bot_2");
 
+No estoy seguro que clase de codigo escribe usted, pero por lo general escribo codigo que sea responsable
+de controlar un ejercito completo de clousure drones, bueno esto es totalmente relistico.
+
+(De alguna) Broma, escencialmente, cuando y donde sea usted trata a las funciones ( que accescen su propopio
+scope lexico ) como valores first-class y los pasa alrededor, es probable ver las funciones ejercitando el
+clousure. Sea que los timers, event handlers, Ajax request, mensajes cross window, web workers, o cualquiera
+otro asyncronico o ( syncronico ) gracias, cuando usted pasa un callback function, este listo a lanzar un
+clousure alrededor.
+
+El capitulo 3 introduce el patron IIFE, es un ejemplo de un clousure observable, por nuestra definicion previa.
+
+var a = 2;
+(function IIFEE() {
+    console.log( a );
+})();
+
+Este codigo funciona, pero no es estrictamente una observacion de un clousure. Por que? Por que la funcion
+( al que llamamos IIFEE aqui ) no esta siendo ejecutada desde afuera en su scope lexico. Todavia invocada
+aqui mismo en el mismo scope a como fue declarada ( despues enclosing/global scope que matiene a la variable
+ 'a'). 'a' es encontrada por medio por el normal scope lexico, no por medio de un clousure.
+
+Mientras que un clousure quizas tecnicamente esta pasando una declaracion de tiempo, no va ser estrictamente
+observable, y entonces, como ellos dicen, es un arbol callendo en el bosque con nadie alrededor para
+poder escucharlo.
+
+Aunque una funcion IIFEE no es ella misma un ejemplo de clousure observable, crea un scope absolutamente, y es una
+de las erramientas mas comunes que utilizamos un scope propio cerrado. Entonces las funciones IIFE's son de
+hecho fuertemente relacionados a clousures, aunque no estemos ejercitando clousures.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

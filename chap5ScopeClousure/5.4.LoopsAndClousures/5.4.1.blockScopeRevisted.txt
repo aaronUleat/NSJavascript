@@ -1,0 +1,8 @@
+BLOCK SCOPE REVISTED
+
+Mire muy de cerca el analisis de la solucion previa. Usamos un IIFE para crear un scope new per-iteracion. En otras
+palabras, necesitamos una pre-iteracion block scope. El capitulo 3 nos ensena a usar declaraciones let, que
+secuestra un block y declara una variable en el block.
+
+Escencialmente se turna un blque dentro un scope que podemos ver de cerca. Entonces, el siguiente codigo
+es excelente.

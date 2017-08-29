@@ -1,0 +1,113 @@
+LOOPS AND CLOUSURES
+
+El ejemplo mas canonico usado para ilustrar, clousures envuelven envuelven al humilde for loop.
+
+for(var i = 0; i<=5; i++) {
+    setTimeout( function timer() {
+        console.log( i );
+     }, i*1000);
+}
+
+Los escuchadores se quejan cuando usted pone funciones dentro de loops, por que el error de no entender
+clousures es comun entre developers. Vamos a explicar aqui como correctamente. Vamos a explicar como hacerlo
+correctamente aqui, liverando el poder absoluto de clousures, pero la sutileza muchas veces se pierde en los
+listeners, y ellos se van a quejar sin importar, asumiendo que usted sabe lo que esta haciendo.
+
+El espiritu de este codigo es lo que normalmente esperamos para el comportamiento para ser el numero 1, 2 ... 5,
+para que sea imprimido, uno a la vez, uno por segundo, respectivamente.
+
+De hecho, si suted corre este codigo, usted printea 6 de 5 veces, en un intervalo de 5 segundos.
+
+Huh?
+
+Primero, vamos a explicar de donde viene 6. La terminacion de la condicion del loop es cuando i no es
+<=5. La primera vez de este caso es cuando 'i' es igual a 6. Entonces el output esta reflejando el valor
+de 'i' despues de que el loop termine.
+
+Esto parace obvio en un segundo vistazo. Los callbacks de la funcion timeout estan corriendo bien despues
+de que se complete el loop. De hecho, a como el timer va, inclusive si fuera un setTimeout(.., 0) en cada
+iteracion, todos estos callbacks de funciones van a seguir corriendo estrictamente despues de que se complete
+el loop, y pinta 6 cada vez.
+
+Pero hay una pregunta mas profunda que hacer aqui. Que esta perdido en nuestro codigo para que en realidad
+se comporte como semanticamente implicamos?
+
+Lo que hemos perdido es que me hemos estado tratando de implicar que cada iteracion del loop captura su propia
+copia de 'i', al momento de la iteracion. Pero, la manera en la que el scope funciona, las 5 veces que se
+recorre la funcion, aunque se definan separadamente en cada loop, son mas cercanos al que se comparte al
+scope global, en cual tiene, de hecho una 'i' dentro de el.
+
+Puesto de esa manera, por su puesto todas las funciones comparten una referencia igual en este caso 'i'.
+Algo acerca la estructura loop tiende a confundirnos pensando que es algo mas sofisticado. No lo es.
+No hay diferencia si en cada each de los 5 timouts callbacks son solo declarados uno despues del otro, con
+ningun loop del todo.
+
+Ok, entonces, de vuelta a la pregunta. Que esta perdido? Necesitamos mas clousure scope. Especificamente,
+necesitamos clousure socpe por cada iteracion del loop.
+
+Aprendimos en el capitulo 3 que el IIFE crea un scope al declarar una funcion inmediatamente que la este ejecutando.
+
+Vamos a tratar:
+
+for( var i = 0; i <=5 ; i++ ) {
+	(function () {
+		setTimeout( function timer() {
+			console.log( i );
+		}, i * 1000 );
+	})();
+}
+
+Eso sirvio? Tratelo. De nuevo. Yo espero.
+
+Voy a terminar el suspenso. Nope. Pero por que? sabemos que obviamente que tiene lexical scope. Cada callback
+de la funcion timeout es de hecho cerrando sobre su propia pre-iteracion creada respectivamente en cada IIFE.
+
+No es suficiente tener un scope que encierre sobre el if si el scope esta vacio. Ve mas de cerca. Nuestra funcion
+IIFE es solo un scope vacio que no hace nada. Necesita algo dentro de la funcion para que sea util para nosotros.
+
+Necesita su propia variable, con una copia del valor de 'i' en cada iteracion.
+
+for(var i = 1; i<=5; i++) {
+	(function () {
+		var j = i;
+		setTimeout(function timer() {
+			console.log( j );
+		}, j * 1000);
+	})();
+}
+
+Eureka!! Funciono.
+
+Una variacion que algunos prefieren es la siguiente:
+
+for(var i = 5; i <= 5; i++) {
+    (function(j){
+        setTimeout(function timer(){
+            console.log(j);
+        }, j*1000);
+    })( i );
+}
+Por su puesto, desde que la IIFE es solo una funcion, podemos pasar i, y la llamamos como j si preferimos de esa
+manera, o podemos llamarla i de nuevo. De cualquier manera el codigo funciona ahora.
+
+Este uso de un iife dentro de una iteracion each crea un nuevo scope para cada iteracion, que nos da el callback
+de la funcion timeout nos da la oportunidad de cerrar un nuevo scope, en la que cada una tiene una variable,
+con el derecho pre-interacion valor para que podamos tener acceso.
+
+Problema resuelto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
