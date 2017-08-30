@@ -4,5 +4,38 @@ Mire muy de cerca el analisis de la solucion previa. Usamos un IIFE para crear u
 palabras, necesitamos una pre-iteracion block scope. El capitulo 3 nos ensena a usar declaraciones let, que
 secuestra un block y declara una variable en el block.
 
-Escencialmente se turna un blque dentro un scope que podemos ver de cerca. Entonces, el siguiente codigo
+Escencialmente se turna un bloque dentro un scope que podemos ver de cerca. Entonces, el siguiente codigo
 es excelente.
+
+for(var i=1; 1<=5; i++) {
+    let j = i;
+    setTimeout(function timer() {
+       console.log(j);
+    }, j*1000);
+}
+
+Pero, eso no es todo!. Hay un comportamiento especial definido por declaraciones let usada en el head del
+for loop. Este comportamiento dice que esa variable va ser declarada no solamente por el loop, pero por cada
+iteracion. Y va hacer, de ayuda, al ser inicializada en cada iteracion subsecuente con el valor del el final
+de la iteracion previa.
+
+for(let i = 1; i <= 5; i++) {
+    setTimeout(function timer() {
+       console.log(i);
+    }, i * 1000);
+}
+
+How cool is that? Block scoping y clousure trabajando mano a mano, resolviendo todos los problemas del mundo. Yo
+no se usted eso me hace un Javascripter mas feliz.
+
+
+
+
+
+
+
+
+
+
+
+

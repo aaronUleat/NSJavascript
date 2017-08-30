@@ -7,3 +7,5 @@ function foo() {
 }
 var baz = foo();
 baz();
+
+

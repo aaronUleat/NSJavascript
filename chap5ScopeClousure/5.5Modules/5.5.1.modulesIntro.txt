@@ -1,0 +1,77 @@
+MODULES
+
+Hay otro patron de codigo que nos da poder para trabajar con clousures pero eso en la superficie no parece ser todo
+acerca de callbacks. Vamos examinar el mas poderoso de los modulos: el modulo.
+
+function foo() {
+    var something   = "cool";
+    var another     = [1,2,3];
+
+    function doSomething() {
+        console.log(something);
+    }
+
+    function doAnother() {
+        console.log(another.join(" ! "));
+    }
+}
+
+Como este codigo se encuentra ahora, no hay un clousure observable. Simplemente alguna data privada, las variables
+something y another, y un par de funciones internas doSomething() y doAnother(), los cuales los dos tienen scope
+lexico (Y asi clousures), sobre el scope interno de foo().
+
+Pero ahora consideremos.
+
+function CoolModule() {
+    var something   = "cool";
+    var another     = [1,2,3];
+
+    function doSomething() {
+        console.log(something);
+    }
+
+    function doAnother() {
+        console.log(another.join(" ! "));
+    }
+    return {
+        doSomething: doSomething,
+        doAnother: doAnother
+    }
+}
+
+var foo = CoolModule();
+foo.doSomething();
+foo.doAnother();
+
+Este es el patron modulo en Javascript. El modo mas comun de implementar el patron module es llamado muchas veces
+el patron revelador, y vamos a presentar su variacion aqui.
+
+Vamos a examinar algunas cosas sobre este codigo aqui.
+
+Primero, CoolModoule() es solo una funcion, pero tiene que ser invocado por una instancia creada. Sin la ejecucion
+de la funcion de afuera, la creacion del scope interno y el clousure no va a ocurrir.
+
+Segundo, la funcion CoolModule() return un objeto, detonado por el object-literal syntax {key:value, ...}. El objeto
+que retornamos tiene referencia en ella a nuestras funciones internas, pero no a nuestra variables data interna.
+Las mantenemos escondidas y privadas. Es apropiado pensar este objeto que retorna un valor escencialmente publico
+ API para nuestro modulo.
+
+ El valor que retorna esta objeto es ultimadamente asignado a la variable de afuera foo, y despues podemos accesar
+ esa propiedad.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
