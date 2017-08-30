@@ -57,7 +57,63 @@ Las mantenemos escondidas y privadas. Es apropiado pensar este objeto que retorn
  API para nuestro modulo.
 
  El valor que retorna esta objeto es ultimadamente asignado a la variable de afuera foo, y despues podemos accesar
- esa propiedad.
+ esa propiedad en la API, foo.doSomething();
+
+ No es requerido lo que retornamos al objeto actual (literal ) de nuestro modulo. Podriamos volver atras a la
+ funcion interna. jQuery es un buen ejemplo de esto. el jQuery y $ identificadores son la API publica para el
+ modulo jQuery, pero ellas son, en si mismas, funciones ( que pueden a si misma tener propiedades, desde que
+ las funciones son objetos).
+
+ El doSomething() y doAnother() tienen clousure sobre el scope interno de la instancia del modulo
+ ( arrivado al invocar CoolModule() ). Cuando transportamos esas funciones fuera del lexical scope,
+ por medio de la propiedad referenciada en el objeto que retornamos, ahora tenemos una condicion
+ por la cual en clousure puede ser observado y ejercitado.
+
+ Para decirlo de una manera mas sencilla, hay dos requerimientos para el patron modulo para que
+ pueda ser ejercitado.
+
+ 1 Tiene que haber una enclosing function desde fuera, y debe ser invocabada por lo menos una vez
+ ( cada vez que se crea una nueva instancia del modulo ).
+
+ 2 El enclosing de la funcion debe de retornar de vuelta por lo menos una funcion interna, de modo que
+ esta funcion interna tenga un clousure sobre un scope privado, y que pueda accesar y/o accesar o modificar
+ este estado privado.
+
+ Un objeto con una propiedad de funcion sobre el no es realidad un modulo. Un objeto que es retornado desde de
+ una invocacion de una funcion que solamente tenga data properties sobre el enclousure de la funcion no es
+ en realidad un modulo, en el sentido observable.
+
+El previo code snippet muestra un creador de modulo independiente llamado CoolModule(), la cual puede ser invocada
+cualquier numero de veces, cada vez creamos un nueva instancia del modulo. Una ligera variacion en este patron es
+cuando usted solo le importa tener una instancia, un singleton de clases:
+
+var foo = (function() {
+	var something		= "cool";
+	var another			= [1, 2, 3];
+
+	function doSomething() {
+		console.log(something);
+	}
+
+	function doAnother() {
+		console.log( another.join(" ! ") );
+	}
+	return {
+		doSomething: doSomething,
+		doAnother: doAnother
+	}
+})();
+
+foo.doSomething();
+foo.doAnother();
+
+Aqui, nosotros turnamos nuestro modulo de la funcion dentro de un IIFE (vea el capitulo 3 ) y que inmediatamente
+invocamos y asigno su valor de retorno directamente a nuestro unico modulo identificado como foo.
+
+Los modulos son solo funciones y ellas pueden recivir parametros.
+
+
+
 
 
 
