@@ -1,10 +1,11 @@
-ENGINE/SCOPE CONVERSTATION
+# ENGINE/SCOPE CONVERSTATION
 
+```
 function foo(a) {
     console.log(a); // 2
 }
 foo(2)
-
+```
 Vamos a imaginar el intercambio (el cual procesa este snnipet) como una conversacion. La conversacion va algo como esto:
 
 Engine: Hey Scope. Tengo una referencia RHS que referencia a 'foo'. Ha escuchado hablar de ella?

@@ -1,4 +1,5 @@
-LOOK-UPS
+# LOOK-UPS
+
 La estructura y posicionamiento relativo de estas burbujas explica totalmente al engine todos los
 lugares que necesita ir a encontrar y identificar.
 En snippet previo, el engine enecutaba el console.log(...) y fue a buscar por las tres variables
@@ -31,7 +32,3 @@ El lexical socope busca, procesa, solo aplica los identificadores de primera cla
 Si usted tiene una referencia de foo, bar, baz en una pieza de codigo, el scope lexical busca y aplica
 para buscar el identificador foo, pero una vez que que localize esa variable, el objeto, property-access
 reglas que toman para resolver las propiedades bar y baz. Respectivamente
-
-
-
-

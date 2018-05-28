@@ -1,4 +1,4 @@
-SCOPE FROM FUNCTIONS
+# SCOPE FROM FUNCTIONS
 
 La respuesta para esas preguntas es que Javascript es que tiene el scope basado en funciones. Eso es, cada es
 que cada funcion que usted declara crea una burbuja para si misma, pero no otra estructura crea su propia
@@ -6,6 +6,7 @@ burbuja de scope. Como vamos a ver, dentro de poco, esto no es tan cierto.
 Pero primero, vamos a explorar el scope de funciones y sus aplicaciones
 Considere el siguiente codigo.
 
+```
 function foo(a) {
     var b = 2;
     // some code
@@ -15,7 +16,7 @@ function foo(a) {
     // more code
     var c = 3;
 }
-
+```
 En este snippet, la burbuja de scope de foo(..) incluye los identificadores 'a', 'b', 'c' y bar. No importa
 donde en el scope una declaracion aparece, la variable o funcion pertenece al contenedor de la burbja
 del scope, sin importar. Vamos a explorar como exactamente eso funciona que funciona en el siguiente capitulo.

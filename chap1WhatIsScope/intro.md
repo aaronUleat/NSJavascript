@@ -1,4 +1,4 @@
-Que es un scope?
+# Que es un scope?
 Uno de los paradigmas fundamentales de los lenguajes de programacion es la abilidad de guardar
 valores en variables, y utilizarlas despues o modificarlas. De hecho, la abilidad de guardar
 valores y extraer valores de variables, es lo que le da a un programa una condicion.

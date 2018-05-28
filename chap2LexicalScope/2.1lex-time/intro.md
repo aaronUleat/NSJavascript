@@ -1,4 +1,4 @@
-LEX-TIME
+# LEX-TIME
 
 Como discutios en el capitulo 1, la primera fase tradicional de un lenguaje standard que es llamado lexing
 (tokenizing). Si usted recuerda el proceso lexico, examina un string como fuente de los caracteres del codigo
@@ -12,6 +12,7 @@ Vamos a ver en un momento que hay algunas maneras de hacerle trampa al scope lex
 de que el lexer haya pasado, pero estos son muy mal vistos. Es considerado una mejor practica tratar el lexical
 scope como, de hecho, le lexical unico, y asi enteramente en el tiempo natural lexico.
 
+```
 function foo(a) {
 	var b = a * 2;
 	function bar(c) {
@@ -20,6 +21,7 @@ function foo(a) {
 	bar(b * 3);
 }
 foo(2);
+```
 
 La burbuja 1 engloba el scope global y solo tiene un identificador en:
 foo()
@@ -37,19 +39,3 @@ Note que estar burbujas anidadas estan estrictamente anidadas. No estamos hablan
 las burbujas pueden crusar fronteras. En otras palabras, no hay burbujas para algunas funciones que existen
 simultaneamente (parcialmente) dentro de de otros scopes externos, solo como no funcion puede parcialmente estar
 dentro de cada una de las funciones padres.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

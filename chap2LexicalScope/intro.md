@@ -1,4 +1,4 @@
-LEXICAL SCOPE
+# LEXICAL SCOPE
 
 En el capitulo 1, definimos scope como un conjunto de reglas que goviernan en como el motor puede buscar
 una variable por su nombre identificador y como encontrarla, ya sea por scope al corriente o algunos de los

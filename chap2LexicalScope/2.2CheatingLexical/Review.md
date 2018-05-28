@@ -1,4 +1,4 @@
-REVIEW
+# REVIEW
 
 El scope lexico significa que el scope es definido por desiciones del autor-time de donde las funciones
 son declaradas. La fase de lexing de compilacion es escencialmente  permitir saber donde y como todos los

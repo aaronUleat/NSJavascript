@@ -1,4 +1,5 @@
-REVIEW
+# REVIEW
+
 El scope es un conjunto de reglas que determina donde y como una variable(identificador) puede ser buscada. Esta
 busqueda puede ser con el proposito de asignar una variable, que es una referencia LHS, o talvez con el proposito
 de recuperar el valor de la varible un RHS referencia.
